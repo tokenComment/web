@@ -1,0 +1,14 @@
+#web服务器配置
+server:
+  port: 8381
+##日志配置
+logging:
+  file: logs/chicken-client-other.log
+  level:
+    root: ERROR
+    com.apache: DEBUG
+    com.suiji.chicken: DEBUG
+  pattern: #使用Spring源码里面的支持命令行高亮的logback语法
+  #${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %clr(%5p) %clr(${PID:- }){magenta} %clr(-){faint} %clr([%t]){faint} %clr(%-40.40logger{39}){cyan} %clr([%L]) %clr(:){faint} %m%n%wEx'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:- } - [%t] %-40.40logger{39} [%L] : %m%n%wEx'

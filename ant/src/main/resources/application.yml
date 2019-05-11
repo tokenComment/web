@@ -1,0 +1,10 @@
+spring:
+  profiles:
+#    active: @profiles.active@
+    active: release
+  session:
+    timeout: 2000
+    store-type: none
+server:
+  servlet:
+    context-path: /api
